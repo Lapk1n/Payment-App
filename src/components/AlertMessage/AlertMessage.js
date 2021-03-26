@@ -4,7 +4,7 @@ import { CSSTransition } from 'react-transition-group'
 import { useProvider } from '../../context/AlertContext'
 import { styles } from './Styles'
 
-export default function AlertMessage() {
+const AlertMessage = () => {
   const { visible, hideAlert } = useProvider()
   const type = useProvider().alert.value
   const message = useProvider().alert.title
@@ -37,3 +37,5 @@ export default function AlertMessage() {
     </CSSTransition>
   )
 }
+
+export default AlertMessage

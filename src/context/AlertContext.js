@@ -1,5 +1,6 @@
 import React, { useReducer, useContext } from 'react'
 import { reducer } from './AlertReducer'
+import PropTypes from 'prop-types'
 import {
   SHOW_PAYMENT_SUCCESS,
   SHOW_PAYMENT_FAIL,
@@ -14,7 +15,7 @@ export const useProvider = () => {
   return useContext(AlertContext)
 }
 
-export default function AlertProvider({ children }) {
+const AlertProvider = ({ children }) => {
   const initialState = {
     loading: false,
     visible: false,
@@ -48,3 +49,7 @@ export default function AlertProvider({ children }) {
     </AlertContext.Provider>
   )
 }
+AlertProvider.propTypes = {
+  children: PropTypes.array.isRequired,
+}
+export default AlertProvider
