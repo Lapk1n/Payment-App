@@ -8,6 +8,11 @@
 .form-feedback {
   color: red;
 }
+#number,
+#operator,
+#amount {
+  width: 80%;
+}
 
 .alert-enter-active {
   animation: alert 600ms ease-in-out forwards;

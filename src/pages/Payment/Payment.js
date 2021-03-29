@@ -4,25 +4,26 @@ import { styles } from './Styles'
 import { useProvider } from '../../context/AlertContext'
 import Loader from '../../components/Loader/Loader'
 import { useValidation } from '../../services/validation'
+import { IMaskInput } from 'react-imask'
 
 export default function Payment(props) {
   const { loading } = useProvider()
   const name = props.location.name
-
   const formik = useValidation()
   return (
     <Container>
       <Form style={styles.form} onSubmit={formik.handleSubmit}>
         <Row>
           <Col>
-            <Form.Group style={styles.formGroup} controlId="formBasicEmail">
-              <Form.Label>Номер телефона</Form.Label>
-              <Form.Control
-                placeholder="8 (999) 999-99-99"
-                isInvalid={formik.errors.number && formik.touched.number}
+            <Form.Group style={styles.formGroup} controlId="formNumber">
+              <label htmlFor="number">Номер телефона</label>
+              <IMaskInput
+                mask={'+{7}(000)000-00-00'}
+                radix="."
                 name="number"
+                id="number"
+                unmask={false}
                 {...formik.getFieldProps('number')}
-                type="number"
               />
               <div className="form-feedback">
                 {formik.errors.number && formik.touched.number
@@ -32,13 +33,16 @@ export default function Payment(props) {
             </Form.Group>
           </Col>
           <Col>
-            <Form.Group style={styles.formGroup} controlId="formBasicPassword">
-              <Form.Label>Сумма</Form.Label>
-              <Form.Control
-                isInvalid={formik.errors.amount && formik.touched.amount}
+            <Form.Group style={styles.formGroup} controlId="formAmount">
+              <label htmlFor="amount" style={styles.label}>
+                Сумма
+              </label>
+              <IMaskInput
+                radix="."
                 name="amount"
+                id="amount"
+                unmask={false}
                 {...formik.getFieldProps('amount')}
-                type="number"
               />
               <div className="form-feedback">
                 {formik.errors.amount && formik.touched.amount
@@ -51,18 +55,20 @@ export default function Payment(props) {
         <Row>
           <Col>
             <Form.Group style={styles.formGroup}>
-              <Form.Label>Мобильный оператор</Form.Label>
-              <Form.Control defaultValue={name} size="lg" as="select">
+              <label htmlFor="operator">Мобильный оператор</label>
+              <select id="operator" defaultValue={name} style={styles.select}>
                 <option value="MTS">MTS</option>
                 <option value="BEELINE">BEELINE</option>
                 <option value="MEGAFON">MEGAFON</option>
-              </Form.Control>
+              </select>
             </Form.Group>
           </Col>
           <Col>
-            <Button style={styles.button} variant="primary" type="submit">
-              {loading ? <Loader /> : 'ОПЛАТИТЬ'}
-            </Button>
+            <Form.Group style={styles.formGroup}>
+              <Button style={styles.button} variant="primary" type="submit">
+                {loading ? <Loader /> : 'ОПЛАТИТЬ'}
+              </Button>
+            </Form.Group>
           </Col>
         </Row>
       </Form>

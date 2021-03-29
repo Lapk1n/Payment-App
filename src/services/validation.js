@@ -12,8 +12,7 @@ const initialValues = {
 
 const validationSchema = Yup.object({
   number: Yup.string()
-    .min(11, 'Количество цифр не менее 11')
-    .max(11, 'Количество цифр не более 11')
+    .min(16, 'Некорректный номер')
     .required('Обязательное поле'),
   amount: Yup.number()
     .min(1, 'Сумма не менее 1')
