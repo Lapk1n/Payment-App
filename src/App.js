@@ -4,7 +4,6 @@ import Payment from './pages/Payment/Payment'
 import AlertProvider from './context/AlertContext'
 import AlertMessage from './components/AlertMessage/AlertMessage'
 import { BrowserRouter as Switch, Route } from 'react-router-dom'
-
 function App() {
   return (
     <AlertProvider>

@@ -4,6 +4,7 @@ import * as Yup from 'yup'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
 const url = process.env.REACT_APP_DB_URL
+console.log(url)
 const initialValues = {
   number: '',
   amount: '',
