@@ -1,23 +1,25 @@
 export const styles = {
   form: {
-    width: '700px',
+    maxWidth: '40em',
     margin: '2em auto',
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-evenly',
   },
   button: {
-    width: '80%',
-    marginTop: '1.5em',
-    lineHeight: '1.2em',
+    width: '100%',
   },
   formGroup: {
     marginBottom: '1em',
+    width: '16em',
   },
-  label: {
-    marginRight: '4em',
+  formGroupBtn: {
+    marginBottom: '1em',
+    width: '16em',
+    paddingTop: '1.5em',
   },
+
   select: {
     height: '2em',
-  },
-  input: {
-    border: '1px solid red',
   },
 }
