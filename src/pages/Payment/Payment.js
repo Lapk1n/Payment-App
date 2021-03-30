@@ -11,7 +11,7 @@ export default function Payment(props) {
   const name = props.location.name
   const formik = useValidation()
   return (
-    <Container>
+    <Container fluid="lg">
       <Form style={styles.form} onSubmit={formik.handleSubmit}>
         <Form.Group style={styles.formGroup} controlId="formNumber">
           <label htmlFor="number">Номер телефона</label>

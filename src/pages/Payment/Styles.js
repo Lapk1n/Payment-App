@@ -18,7 +18,6 @@ export const styles = {
     width: '16em',
     paddingTop: '1.5em',
   },
-
   select: {
     height: '2em',
   },

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { CardDeck, Container } from 'react-bootstrap'
-import { operators } from '../../data/operators'
+
 import OperatorsCard from '../../components/OperatorsCard/OperatorsCard'
 import { app } from '../../base'
 const dataBase = app.firestore()
