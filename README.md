@@ -1,8 +1,8 @@
 # Readme
-This is a test app which may provide someone to accomplish payment operation.
-Powered by React, bootstrap.
- App has its own realtime database.
-  Click the follow [link](https://payment-app-v3.web.app/) to see that.<br>
+This is a test app which may provide someone to accomplish payment operation.<br>
+Powered by React, bootstrap.<br>
+App has its own realtime database.<br>
+Click the follow [link](https://payment-app-v3.web.app/) to see that.<br>
   
   ---
   **Refactoring task.**
