@@ -1,4 +1,3 @@
-Readme
 ---
 This is a test app which may provide someone to accomplish payment operation.<br>
 Powered by React, bootstrap.<br>
