@@ -4,7 +4,7 @@ Refactoring task.
 
 1. Previous function:
 
-function func(s, a, b) {
+function func(s, a, b) {<br>
   if (s.match(/^$/)) {
     return -1
   }
