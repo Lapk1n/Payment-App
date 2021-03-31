@@ -55,13 +55,13 @@ export const useValidation = () => {
       await axios.post(`${url}/data.json`, data)
 
       showAlertSuccess()
-      setTimeout(() => handleHistory(), 1500)
+      setTimeout(() => handleHistory(), 2000)
     } catch (e) {
       showAlertFail()
     } finally {
       setTimeout(() => hideLoader())
     }
-    setTimeout(() => hideAlert(), 3500)
+    setTimeout(() => hideAlert(), 1500)
   }
 
   const formik = useFormik({
