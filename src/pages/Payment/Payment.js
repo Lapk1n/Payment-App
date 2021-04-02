@@ -1,16 +1,18 @@
 import React from 'react'
 import { Form, Button, Container } from 'react-bootstrap'
-import { useALertContext } from '../../context/AlertContext'
+import { useAlertContext } from '../../context/AlertContext'
 import Loader from '../../components/Loader/Loader'
 import { useValidation } from '../../services/validation'
 import { css } from 'aphrodite'
 import styles from './stylesheet'
 import { Field } from '../../components/Field/Field'
+import { useLocation } from 'react-router-dom'
 
-export default function Payment(props) {
-  const { loading } = useALertContext()
-  const name = props.location.name
+export default function Payment() {
+  const name = useLocation().search.substring(10)
+  const { loading } = useAlertContext()
   const formik = useValidation()
+
   return (
     <Container fluid="lg">
       <Form className={css(styles.form)} onSubmit={formik.handleSubmit}>

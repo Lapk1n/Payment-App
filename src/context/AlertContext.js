@@ -11,7 +11,7 @@ import {
 
 const AlertContext = React.createContext()
 
-export const useALertContext = () => {
+export const useAlertContext = () => {
   return useContext(AlertContext)
 }
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import Alert from 'react-bootstrap/Alert'
 import { CSSTransition } from 'react-transition-group'
-import { useALertContext } from '../../context/AlertContext'
+import { useAlertContext } from '../../context/AlertContext'
 import { css } from 'aphrodite'
 import styles from './stylesheet'
 
@@ -10,7 +10,7 @@ const AlertMessage = () => {
     visible,
     hideAlert,
     alert: { value, title },
-  } = useALertContext()
+  } = useAlertContext()
   const removeALert = hideAlert
 
   return (

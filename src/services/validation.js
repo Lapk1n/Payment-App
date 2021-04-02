@@ -1,5 +1,5 @@
 import { useFormik } from 'formik'
-import { useALertContext } from '../context/AlertContext'
+import { useAlertContext } from '../context/AlertContext'
 import * as Yup from 'yup'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
@@ -33,7 +33,7 @@ export const useValidation = () => {
     showAlertSuccess,
     showAlertFail,
     hideAlert,
-  } = useALertContext()
+  } = useAlertContext()
 
   const onSubmit = async (value) => {
     showLoader()
