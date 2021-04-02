@@ -1,60 +1,48 @@
 import React from 'react'
 import { Form, Button, Container } from 'react-bootstrap'
-import { styles } from './Styles'
-import { useProvider } from '../../context/AlertContext'
+import { useALertContext } from '../../context/AlertContext'
 import Loader from '../../components/Loader/Loader'
 import { useValidation } from '../../services/validation'
-import { IMaskInput } from 'react-imask'
+import { css } from 'aphrodite'
+import styles from './stylesheet'
+import { Field } from '../../components/Field/Field'
 
 export default function Payment(props) {
-  const { loading } = useProvider()
+  const { loading } = useALertContext()
   const name = props.location.name
   const formik = useValidation()
   return (
     <Container fluid="lg">
-      <Form style={styles.form} onSubmit={formik.handleSubmit}>
-        <Form.Group style={styles.formGroup} controlId="formNumber">
-          <label htmlFor="number">Номер телефона</label>
-          <IMaskInput
-            mask={'+{7}(000)000-00-00'}
-            radix="."
-            name="number"
-            id="number"
-            unmask={false}
-            {...formik.getFieldProps('number')}
-          />
-          <div className="form-feedback">
-            {formik.errors.number && formik.touched.number
-              ? formik.errors.number
-              : null}
-          </div>
-        </Form.Group>
-        <Form.Group style={styles.formGroup} controlId="formAmount">
-          <label htmlFor="amount">Сумма платежа</label>
-          <IMaskInput
-            radix="."
-            name="amount"
-            id="amount"
-            unmask={false}
-            {...formik.getFieldProps('amount')}
-          />
-          <div className="form-feedback">
-            {formik.errors.amount && formik.touched.amount
-              ? formik.errors.amount
-              : null}
-          </div>
-        </Form.Group>
-        <Form.Group style={styles.formGroup}>
+      <Form className={css(styles.form)} onSubmit={formik.handleSubmit}>
+        <Field
+          labelName="Номер телефона"
+          formId="formNumber"
+          mask={'+{7}(000)000-00-00'}
+          inputName="number"
+          formikProps={formik}
+        />
+        <Field
+          labelName="Сумма платежа"
+          formId="formAmount"
+          mask={'0000'}
+          inputName="amount"
+          formikProps={formik}
+        />
+        <Form.Group className={css(styles.formGroup)}>
           <label htmlFor="operator">Мобильный оператор</label>
-          <select id="operator" defaultValue={name} style={styles.select}>
+          <select
+            className={css(styles.inputSelect)}
+            id="operator"
+            defaultValue={name}
+          >
             <option value="MTS">MTS</option>
             <option value="BEELINE">BEELINE</option>
             <option value="MEGAFON">MEGAFON</option>
           </select>
         </Form.Group>
-        <Form.Group style={styles.formGroupBtn}>
+        <Form.Group className={css(styles.formGroupBtn)}>
           <Button
-            style={styles.button}
+            className={css(styles.button)}
             size="sm"
             variant="primary"
             type="submit"

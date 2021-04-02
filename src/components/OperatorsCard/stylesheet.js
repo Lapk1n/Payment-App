@@ -1,4 +1,5 @@
-export const styles = {
+import { StyleSheet } from 'aphrodite'
+export default StyleSheet.create({
   card: {
     display: 'flex',
     flexDirection: 'row',
@@ -6,12 +7,12 @@ export const styles = {
     alignItems: 'center',
     marginBottom: '1em',
   },
-  img: {
+  cardImg: {
     width: '34%',
     padding: '1rem 1rem',
   },
-  body: {
+  cardBody: {
     display: 'flex',
     justifyContent: 'flex-end',
   },
-}
+})

@@ -1,13 +1,17 @@
 import React from 'react'
 import Alert from 'react-bootstrap/Alert'
 import { CSSTransition } from 'react-transition-group'
-import { useProvider } from '../../context/AlertContext'
-import { styles } from './Styles'
+import { useALertContext } from '../../context/AlertContext'
+import { css } from 'aphrodite'
+import styles from './stylesheet'
 
 const AlertMessage = () => {
-  const { visible, hideAlert } = useProvider()
-  const type = useProvider().alert.value
-  const message = useProvider().alert.title
+  const {
+    visible,
+    hideAlert,
+    alert: { value, title },
+  } = useALertContext()
+  const removeALert = hideAlert
 
   return (
     <CSSTransition
@@ -18,13 +22,13 @@ const AlertMessage = () => {
       unmountOnExit
     >
       <Alert
-        onClick={() => hideAlert()}
-        style={styles.alert}
-        variant={type || 'danger'}
+        onClick={removeALert}
+        className={css(styles.alert)}
+        variant={value || 'danger'}
         onClose={''}
       >
-        <Alert.Heading style={styles.heading}>
-          {message || 'Placeholder!'}
+        <Alert.Heading className={css(styles.heading)}>
+          {title || 'Placeholder!'}
         </Alert.Heading>
 
         <button

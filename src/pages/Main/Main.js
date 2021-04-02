@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { CardDeck, Container } from 'react-bootstrap'
-
 import OperatorsCard from '../../components/OperatorsCard/OperatorsCard'
 import { app } from '../../base'
+import { css } from 'aphrodite'
+import styles from './stylesheet'
+
 const dataBase = app.firestore()
 
 export default function Main() {
@@ -21,7 +23,7 @@ export default function Main() {
 
   return (
     <Container>
-      <CardDeck>
+      <CardDeck className={css(styles.cardDeck)}>
         {images.map((image) => (
           <OperatorsCard key={image.id} {...image} />
         ))}

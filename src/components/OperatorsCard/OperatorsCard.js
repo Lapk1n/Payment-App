@@ -2,14 +2,15 @@ import React from 'react'
 import { Card, Button } from 'react-bootstrap'
 import PropTypes from 'prop-types'
 import { NavLink } from 'react-router-dom'
-import { styles } from './Styles'
+import { css } from 'aphrodite'
+import styles from './stylesheet'
 
 const OperatorsCard = ({ avatar, name }) => {
   return (
-    <Card style={styles.card}>
-      <Card.Img style={styles.img} variant="top" src={avatar} />
-      <Card.Body style={styles.body}>
-        <NavLink to={{ pathname: '/payment', name: name }}>
+    <Card className={css(styles.card)}>
+      <Card.Img className={css(styles.cardImg)} variant="top" src={avatar} />
+      <Card.Body className={css(styles.cardBody)}>
+        <NavLink to={{ pathname: `/payment`, name: name }}>
           <Button variant="primary">ОПЛАТИТЬ</Button>
         </NavLink>
       </Card.Body>

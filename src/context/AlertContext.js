@@ -1,5 +1,5 @@
 import React, { useReducer, useContext } from 'react'
-import { reducer } from './AlertReducer'
+import { reducer } from './alertReducer'
 import PropTypes from 'prop-types'
 import {
   SHOW_PAYMENT_SUCCESS,
@@ -11,7 +11,7 @@ import {
 
 const AlertContext = React.createContext()
 
-export const useProvider = () => {
+export const useALertContext = () => {
   return useContext(AlertContext)
 }
 
