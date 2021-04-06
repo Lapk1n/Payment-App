@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Card, Button } from 'react-bootstrap'
 import PropTypes from 'prop-types'
-import { NavLink } from 'react-router-dom'
 import { css } from 'aphrodite'
 import styles from './stylesheet'
 import { useHistory } from 'react-router-dom'
+import { ICard } from '../../../interfaces'
 
-const OperatorsCard = ({ avatar, name }) => {
+const OperatorsCard: React.FC<ICard> = ({ avatar, name }) => {
   const history = useHistory()
   const handleHistory = () => {
     history.push({

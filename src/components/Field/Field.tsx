@@ -3,8 +3,9 @@ import { Form } from 'react-bootstrap'
 import { IMaskInput } from 'react-imask'
 import { css } from 'aphrodite'
 import styles from './stylesheet'
+import { IField } from '../../../interfaces'
 
-export const Field = (props) => {
+export const Field: React.FC<IField> = (props) => {
   const { labelName, formId, mask, inputName, formikProps } = props
 
   return (

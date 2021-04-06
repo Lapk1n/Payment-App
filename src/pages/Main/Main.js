@@ -16,6 +16,7 @@ export default function Main() {
     showLoader()
     const fetchImages = async () => {
       const logosCollection = await dataBase.collection('images').get()
+
       setImages(
         logosCollection.docs.map((doc) => {
           return doc.data()
@@ -25,7 +26,6 @@ export default function Main() {
     }
     fetchImages()
   }, [])
-
   return (
     <Container>
       <CardDeck className={css(styles.cardDeck)}>

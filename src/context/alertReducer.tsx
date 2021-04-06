@@ -5,8 +5,9 @@ import {
   SHOW_LOADER,
   HIDE_LOADER,
 } from './types'
+import { initType, actionType } from '../../interfaces'
 
-export const reducer = (state, action) => {
+export const reducer = (state: initType, action: actionType) => {
   switch (action.type) {
     case SHOW_PAYMENT_SUCCESS:
       return {

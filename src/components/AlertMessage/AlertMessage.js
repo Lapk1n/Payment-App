@@ -11,6 +11,7 @@ const AlertMessage = () => {
     hideAlert,
     alert: { value, title },
   } = useAlertContext()
+
   const removeALert = hideAlert
 
   return (
@@ -25,7 +26,6 @@ const AlertMessage = () => {
         onClick={removeALert}
         className={css(styles.alert)}
         variant={value || 'danger'}
-        onClose={''}
       >
         <Alert.Heading className={css(styles.heading)}>
           {title || 'Placeholder!'}

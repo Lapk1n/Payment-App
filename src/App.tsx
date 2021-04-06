@@ -5,7 +5,7 @@ import AlertProvider from './context/AlertContext'
 import AlertMessage from './components/AlertMessage/AlertMessage'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-function App() {
+const App: React.FC = () => {
   return (
     <Router>
       <AlertProvider>
