@@ -1,6 +1,6 @@
 import React, { useReducer, useContext, ReactNode } from 'react'
 import { reducer } from './alertReducer'
-import { initType } from '../../interfaces'
+import { IAlertContext, initType } from '../../interfaces'
 import {
   SHOW_PAYMENT_SUCCESS,
   SHOW_PAYMENT_FAIL,
@@ -9,7 +9,7 @@ import {
   HIDE_LOADER,
 } from './types'
 
-const AlertContext = React.createContext({})
+const AlertContext = React.createContext<Partial<IAlertContext>>({})
 
 export const useAlertContext = () => {
   return useContext(AlertContext)
@@ -25,13 +25,11 @@ const AlertProvider = ({ children }: { children: ReactNode }) => {
 
   const [state, dispatch] = useReducer(reducer, initialState)
 
-  const showLoader = (): void => dispatch({ type: SHOW_LOADER })
-  const hideLoader = (): void => dispatch({ type: HIDE_LOADER })
-  const showAlertSuccess = (value: string, title: string): void =>
-    dispatch({ type: SHOW_PAYMENT_SUCCESS, value, title })
-  const showAlertFail = (value: string, title: string): void =>
-    dispatch({ type: SHOW_PAYMENT_FAIL, value, title })
-  const hideAlert = (): void => dispatch({ type: HIDE_PAYMENT })
+  const showLoader = () => dispatch({ type: SHOW_LOADER })
+  const hideLoader = () => dispatch({ type: HIDE_LOADER })
+  const showAlertSuccess = () => dispatch({ type: SHOW_PAYMENT_SUCCESS })
+  const showAlertFail = () => dispatch({ type: SHOW_PAYMENT_FAIL })
+  const hideAlert = () => dispatch({ type: HIDE_PAYMENT })
 
   return (
     <AlertContext.Provider
@@ -41,7 +39,8 @@ const AlertProvider = ({ children }: { children: ReactNode }) => {
         showAlertSuccess,
         showAlertFail,
         hideAlert,
-        alert: state,
+        value: state.value,
+        title: state.title,
         loading: state.loading,
         visible: state.visible,
       }}

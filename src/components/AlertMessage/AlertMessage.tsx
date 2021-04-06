@@ -6,13 +6,8 @@ import { css } from 'aphrodite'
 import styles from './stylesheet'
 
 const AlertMessage = () => {
-  const {
-    visible,
-    hideAlert,
-    alert: { value, title },
-  } = useAlertContext()
-
-  const removeALert = hideAlert
+  const { visible, hideAlert, value, title } = useAlertContext()
+  const removeAlert = hideAlert
 
   return (
     <CSSTransition
@@ -23,7 +18,7 @@ const AlertMessage = () => {
       unmountOnExit
     >
       <Alert
-        onClick={removeALert}
+        onClick={removeAlert}
         className={css(styles.alert)}
         variant={value || 'danger'}
       >
@@ -32,7 +27,7 @@ const AlertMessage = () => {
         </Alert.Heading>
 
         <button
-          onClick={() => hideAlert()}
+          onClick={() => removeAlert}
           type="button"
           className="btn-close"
           aria-label="Close"

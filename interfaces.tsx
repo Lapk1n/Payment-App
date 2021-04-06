@@ -1,7 +1,7 @@
 export interface IField {
   labelName: string
   formId: string
-  mask: object
+  mask: string
   inputName: string
   formikProps: any
 }
@@ -9,15 +9,17 @@ export interface ICard {
   avatar: string
   name: string
 }
+
 export interface IAlertContext {
-  alert: object
-  hideAlert: React.FC
-  showLoader: React.FC
+  value?: string
+  title?: string
   loading: boolean
   visible: boolean
-  showAlertFail: React.FC
-  hideLoader: React.FC
-  showAlertSuccess: React.FC
+  hideAlert: () => void
+  showLoader: () => void
+  showAlertFail: () => void
+  hideLoader: () => void
+  showAlertSuccess: () => void
 }
 export type initType = {
   loading: boolean
@@ -25,9 +27,13 @@ export type initType = {
   value?: string
   title?: string
 }
-
 export type actionType = {
   type: string
   value?: string
   title?: string
 }
+// export interface IinitValues {
+//   number?: string
+//   amount?: string
+//   loading: boolean
+// }

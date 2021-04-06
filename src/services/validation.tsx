@@ -3,9 +3,10 @@ import { useAlertContext } from '../context/AlertContext'
 import * as Yup from 'yup'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
+
 const url = process.env.REACT_APP_DB_URL
 
-const initialValues = {
+const initialValues: any = {
   number: '',
   amount: '',
   loading: false,
@@ -35,8 +36,8 @@ export const useValidation = () => {
     hideAlert,
   } = useAlertContext()
 
-  const onSubmit = async (value) => {
-    showLoader()
+  const onSubmit = async (value: string[]) => {
+    showLoader!()
     try {
       await new Promise((resolve, reject) => {
         setTimeout(() => {
@@ -53,15 +54,14 @@ export const useValidation = () => {
         date: new Date().toJSON(),
       }
       await axios.post(`${url}/data.json`, data)
-
-      showAlertSuccess()
+      showAlertSuccess!()
       setTimeout(() => handleHistory(), 2000)
     } catch (e) {
-      showAlertFail()
+      showAlertFail!()
     } finally {
-      setTimeout(() => hideLoader())
+      setTimeout(() => hideLoader!())
     }
-    setTimeout(() => hideAlert(), 1500)
+    setTimeout(() => hideAlert!(), 1500)
   }
 
   const formik = useFormik({
