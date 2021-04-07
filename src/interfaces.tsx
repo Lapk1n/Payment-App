@@ -23,10 +23,13 @@ export type InitType = {
   value?: string
   title?: string
 }
-export type ActionType = {
-  type: string
-  value?: string
-  title?: string
+export type Action = {
+  type:
+    | 'SHOW_PAYMENT_SUCCESS'
+    | 'SHOW_PAYMENT_FAIL'
+    | 'HIDE_PAYMENT'
+    | 'SHOW_LOADER'
+    | 'HIDE_LOADER'
 }
 export type DataType = {
   id: number

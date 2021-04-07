@@ -1,15 +1,8 @@
-import {
-  SHOW_PAYMENT_SUCCESS,
-  SHOW_PAYMENT_FAIL,
-  HIDE_PAYMENT,
-  SHOW_LOADER,
-  HIDE_LOADER,
-} from './types'
-import { InitType, ActionType } from '../interfaces'
+import { InitType, Action } from '../interfaces'
 
-export const reducer = (state: InitType, action: ActionType) => {
-  switch (action.type) {
-    case SHOW_PAYMENT_SUCCESS:
+export const reducer = (state: InitType, { type }: Action) => {
+  switch (type) {
+    case 'SHOW_PAYMENT_SUCCESS':
       return {
         ...state,
         visible: true,
@@ -17,18 +10,18 @@ export const reducer = (state: InitType, action: ActionType) => {
         title: 'Платеж выполнен!',
       }
 
-    case SHOW_PAYMENT_FAIL:
+    case 'SHOW_PAYMENT_FAIL':
       return {
         ...state,
         visible: true,
         value: 'danger',
         title: 'Платеж не выполнен!',
       }
-    case HIDE_PAYMENT:
+    case 'HIDE_PAYMENT':
       return { ...state, visible: false }
-    case SHOW_LOADER:
+    case 'SHOW_LOADER':
       return { ...state, loading: true }
-    case HIDE_LOADER:
+    case 'HIDE_LOADER':
       return { ...state, loading: false }
     default:
       return state
