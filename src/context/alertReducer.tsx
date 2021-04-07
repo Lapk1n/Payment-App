@@ -1,6 +1,6 @@
-import { InitType, Action } from '../interfaces'
+import { StateType, ActionType } from '../interfaces'
 
-export const reducer = (state: InitType, { type }: Action) => {
+export const reducer = (state: StateType, { type }: ActionType) => {
   switch (type) {
     case 'SHOW_PAYMENT_SUCCESS':
       return {

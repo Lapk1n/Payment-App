@@ -17,13 +17,13 @@ export interface IAlertContext {
   hideLoader: () => void
   showAlertSuccess: () => void
 }
-export type InitType = {
+export type StateType = {
   loading: boolean
   visible: boolean
   value?: string
   title?: string
 }
-export type Action = {
+export type ActionType = {
   type:
     | 'SHOW_PAYMENT_SUCCESS'
     | 'SHOW_PAYMENT_FAIL'

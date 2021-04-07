@@ -1,6 +1,6 @@
 import React, { useReducer, useContext, ReactNode } from 'react'
 import { reducer } from './alertReducer'
-import { IAlertContext, InitType } from '../interfaces'
+import { IAlertContext, StateType } from '../interfaces'
 
 const AlertContext = React.createContext<Partial<IAlertContext>>({})
 
@@ -9,7 +9,7 @@ export const useAlertContext = () => {
 }
 
 const AlertProvider = ({ children }: { children: ReactNode }) => {
-  const initialState: InitType = {
+  const initialState: StateType = {
     loading: false,
     visible: false,
     value: '',
