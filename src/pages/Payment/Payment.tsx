@@ -9,7 +9,7 @@ import { Field } from '../../components/Field/Field'
 import { useLocation } from 'react-router-dom'
 
 export default function Payment() {
-  const name = useLocation().search.substring(10)
+  const name: string = useLocation().search.substring(10)
   const { loading } = useAlertContext()
   const formik = useValidation()
 

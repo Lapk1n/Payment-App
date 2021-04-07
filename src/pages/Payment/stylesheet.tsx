@@ -23,7 +23,6 @@ export default StyleSheet.create({
   select: {
     height: '2em',
   },
-
   inputSelect: {
     width: '100%',
     height: '2em',

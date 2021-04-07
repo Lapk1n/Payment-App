@@ -3,7 +3,7 @@ import { useAlertContext } from '../context/AlertContext'
 import * as Yup from 'yup'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
-import { valuesType } from '../../interfaces'
+import { valuesType } from '../interfaces'
 
 const url = process.env.REACT_APP_DB_URL
 

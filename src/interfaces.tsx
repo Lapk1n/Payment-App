@@ -5,10 +5,6 @@ export interface IField {
   inputName: string
   formikProps: any
 }
-export interface ICard {
-  src: string
-  name: string
-}
 
 export interface IAlertContext {
   value?: string
@@ -32,7 +28,7 @@ export type actionType = {
   value?: string
   title?: string
 }
-export type itemType = {
+export type dataType = {
   id: number
   name: string
   src: string

@@ -1,6 +1,6 @@
 import React, { useReducer, useContext, ReactNode } from 'react'
 import { reducer } from './alertReducer'
-import { IAlertContext, initType } from '../../interfaces'
+import { IAlertContext, initType } from '../interfaces'
 import {
   SHOW_PAYMENT_SUCCESS,
   SHOW_PAYMENT_FAIL,

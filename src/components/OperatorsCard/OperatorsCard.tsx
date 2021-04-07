@@ -3,11 +3,11 @@ import { Card, Button } from 'react-bootstrap'
 import { css } from 'aphrodite'
 import styles from './stylesheet'
 import { useHistory } from 'react-router-dom'
-import { ICard } from '../../../interfaces'
+import { dataType } from '../../interfaces'
 
-const OperatorsCard: React.FC<ICard> = ({ src, name }) => {
+const OperatorsCard = ({ src, name }: dataType) => {
   const history = useHistory()
-  const handleHistory = () => {
+  const handleHistory = (): void => {
     history.push({
       pathname: `/payment`,
       search: `?operator=${name}`,
