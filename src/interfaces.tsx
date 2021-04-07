@@ -17,23 +17,23 @@ export interface IAlertContext {
   hideLoader: () => void
   showAlertSuccess: () => void
 }
-export type initType = {
+export type InitType = {
   loading: boolean
   visible: boolean
   value?: string
   title?: string
 }
-export type actionType = {
+export type ActionType = {
   type: string
   value?: string
   title?: string
 }
-export type dataType = {
+export type DataType = {
   id: number
   name: string
   src: string
 }
-export type valuesType = {
+export type ValuesType = {
   number?: string
   amount?: string
   loading: boolean

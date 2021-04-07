@@ -1,6 +1,6 @@
 import React, { useReducer, useContext, ReactNode } from 'react'
 import { reducer } from './alertReducer'
-import { IAlertContext, initType } from '../interfaces'
+import { IAlertContext, InitType } from '../interfaces'
 import {
   SHOW_PAYMENT_SUCCESS,
   SHOW_PAYMENT_FAIL,
@@ -16,7 +16,7 @@ export const useAlertContext = () => {
 }
 
 const AlertProvider = ({ children }: { children: ReactNode }) => {
-  const initialState: initType = {
+  const initialState: InitType = {
     loading: false,
     visible: false,
     value: '',

@@ -3,11 +3,11 @@ import { useAlertContext } from '../context/AlertContext'
 import * as Yup from 'yup'
 import { useHistory } from 'react-router-dom'
 import axios from 'axios'
-import { valuesType } from '../interfaces'
+import { ValuesType } from '../interfaces'
 
 const url = process.env.REACT_APP_DB_URL
 
-const initialValues: valuesType = {
+const initialValues: ValuesType = {
   number: '',
   amount: '',
   loading: false,
@@ -37,7 +37,7 @@ export const useValidation = () => {
     hideAlert,
   } = useAlertContext()
 
-  const onSubmit = async (value: valuesType) => {
+  const onSubmit = async (value: ValuesType) => {
     showLoader!()
     try {
       await new Promise((resolve, reject) => {

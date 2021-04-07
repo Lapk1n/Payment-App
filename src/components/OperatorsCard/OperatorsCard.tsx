@@ -3,9 +3,9 @@ import { Card, Button } from 'react-bootstrap'
 import { css } from 'aphrodite'
 import styles from './stylesheet'
 import { useHistory } from 'react-router-dom'
-import { dataType } from '../../interfaces'
+import { DataType } from '../../interfaces'
 
-const OperatorsCard = ({ src, name }: dataType) => {
+const OperatorsCard = ({ src, name }: DataType) => {
   const history = useHistory()
   const handleHistory = (): void => {
     history.push({
