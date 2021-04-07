@@ -1,12 +1,11 @@
 import React from 'react'
 import { Card, Button } from 'react-bootstrap'
-import PropTypes from 'prop-types'
 import { css } from 'aphrodite'
 import styles from './stylesheet'
 import { useHistory } from 'react-router-dom'
 import { ICard } from '../../../interfaces'
 
-const OperatorsCard: React.FC<ICard> = ({ avatar, name }) => {
+const OperatorsCard: React.FC<ICard> = ({ src, name }) => {
   const history = useHistory()
   const handleHistory = () => {
     history.push({
@@ -17,7 +16,7 @@ const OperatorsCard: React.FC<ICard> = ({ avatar, name }) => {
 
   return (
     <Card className={css(styles.card)}>
-      <Card.Img className={css(styles.cardImg)} variant="top" src={avatar} />
+      <Card.Img className={css(styles.cardImg)} variant="top" src={src} />
       <Card.Body className={css(styles.cardBody)}>
         <Button onClick={handleHistory} variant="primary">
           ОПЛАТИТЬ
@@ -26,8 +25,5 @@ const OperatorsCard: React.FC<ICard> = ({ avatar, name }) => {
     </Card>
   )
 }
-OperatorsCard.propTypes = {
-  avatar: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-}
+
 export default OperatorsCard

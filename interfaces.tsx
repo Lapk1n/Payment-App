@@ -6,7 +6,7 @@ export interface IField {
   formikProps: any
 }
 export interface ICard {
-  avatar: string
+  src: string
   name: string
 }
 
@@ -32,8 +32,13 @@ export type actionType = {
   value?: string
   title?: string
 }
-// export interface IinitValues {
-//   number?: string
-//   amount?: string
-//   loading: boolean
-// }
+export type itemType = {
+  id: number
+  name: string
+  src: string
+}
+export type valuesType = {
+  number?: string
+  amount?: string
+  loading: boolean
+}
